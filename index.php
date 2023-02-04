@@ -38,7 +38,7 @@ class Movie
 // Primo metodo per aggiungere un film
 $title = 'Life Is Beautiful';
 $date = 1997;
-$genres = 'Dramatic';
+$genres = ['Dramatic', 'Comedy',];
 $duration = 116;
 $motion_picture = 'Pg-13';
 
@@ -46,7 +46,8 @@ $movie_1 = new Movie($title, $date, $genres, $duration, $motion_picture);
 $movie_1->ratingage($motion_picture);
 
 //Secondo metodo per aggiungere un film
-$movie_2 = new Movie('PUSS IN BOOTS: THE LAST WISH', 2022, 'Animated', 102, 'Pg');
+$genres_movie2 = ['Kids & Family', 'Comedy', 'Adventure', 'Animation'];
+$movie_2 = new Movie('PUSS IN BOOTS: THE LAST WISH', 2022, $genres_movie2, 102, 'Pg');
 $movie_2->ratingage('Pg');
 
 ?>
@@ -69,7 +70,7 @@ $movie_2->ratingage('Pg');
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $movie_1->title; ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Date: <?php echo $movie_1->date; ?></h6>
-                        <h6 class="card-subtitle mb-2 text-muted">Genres: <?php echo $movie_1->genres; ?></h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Genres: <?php echo implode(",", $movie_1->genres) ?></h6>
                         <h6 class="card-subtitle mb-2 text-muted">Duration: <?php echo $movie_1->duration; ?>m</h6>
                         <p class="card-text">
                             Public:
@@ -84,7 +85,7 @@ $movie_2->ratingage('Pg');
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $movie_2->title; ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Date: <?php echo $movie_2->date; ?></h6>
-                        <h6 class="card-subtitle mb-2 text-muted">Genres: <?php echo $movie_2->genres; ?></h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Genres: <?php echo implode(",", $movie_2->genres); ?></h6>
                         <h6 class="card-subtitle mb-2 text-muted">Duration: <?php echo $movie_2->duration; ?>m</h6>
                         <p class="card-text">
                             Public:
